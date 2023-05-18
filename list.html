@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+    <script>        
+         $(document).ready(function(){           
+            let  listDB = ["브랜드소개","이벤트상품","메뉴2","체험신청하기"]
+            let  listDBHref = ["#section1","#section2","#event","#form"]  
+
+            let  tagli =`` ; //중복을 막기위해 선언만하기
+
+            for( x in listDB){ // li들 모아두기
+                tagli +=`<li>
+                            <a href="${listDBHref[x]}">
+                                ${listDB[x]}
+                            </a>
+                        </li>` 
+            }          
+                        
+            $("#gnb").html(tagli) // 한방에 출력하기
+
+            $("#gnb li").eq(0).addClass('bbb')
+        
+        })//// ready
+
+    </script>
+</head>
+<body>
+     <header id="hd">
+        <ul id="gnb"></ul>
+     </header>
+</body>
+</html>
